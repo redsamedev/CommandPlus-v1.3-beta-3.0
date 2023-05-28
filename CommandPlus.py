@@ -311,15 +311,30 @@ def Games_Downloader():
             for i in helplist:
                 print(i)
         elif user == 1:
-            print("ok")
+            print("-------------------------")
+            print("")
+            print("Downloading Geometry Dash")
+            print("")
+            print("-------------------------")
+            os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\GeometryDash.exe')
             MainOfApp()
             break
         elif user == 2:
-            print("Ok")
+            print("-------------------------")
+            print("")
+            print("Downloading Geometry Dash")
+            print("")
+            print("-------------------------")
+            os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\TL_Setup.exe')
             MainOfApp()
             break
         elif user == 3:
-            print("OK")
+            print("-------------------------")
+            print("")
+            print("Downloading Geometry Dash")
+            print("")
+            print("-------------------------")
+            os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\OC_Setup')
             MainOfApp()
             break
         else:
