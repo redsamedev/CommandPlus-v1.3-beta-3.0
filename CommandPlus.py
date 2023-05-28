@@ -23,7 +23,7 @@ def MainOfApp():
         elif user == "cpver":
             print("-----------------------------")
             print("")
-            print("CommandPlus 1.1")
+            print("CommandPlus 1.2")
             print("")
             print("-----------------------------")
             print("")
@@ -160,7 +160,7 @@ def Apps_Downloader():
             else:
                 print("Error(Programme Not Found)")
         elif user == "2":
-            plist = ["1)Audacity", "2)Git", "3)Aseprite", "4)Krita", "5)K-Lite Codec Pack(Mega)", "6)Horizon Xbox 360 Modding Tool", "7)VLC", "8)Bandicam(Trial)", "9)Blender(2.8)"]
+            plist = ["1)Audacity", "2)Git", "3)Aseprite", "4)Krita", "5)VLC", "6)Bandicam(Trial)", "7)Blender(2.8)"]
             print("")
             print("")
             for i in plist:
@@ -227,35 +227,6 @@ def Apps_Downloader():
             elif userinstall == "5":
                 print("----------------------")
                 print("")
-                print("Installing K-Lite Codec Pack(Mega)...")
-                print("")
-                print("----------------------")
-                os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\T&P\KCP_Setup')
-                print("--------------------------")
-                print("")
-                print("Retune To The Main Menu...")
-                print("")
-                print("--------------------------")
-                MainOfApp()
-                break
-            elif userinstall == "6":
-                print("----------------------")
-                print("")
-                print("Installing Horizon Xbox360 Modding Tool...")
-                print("")
-                print("----------------------")
-                os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\T&P\HorizonSetup')
-                
-                print("--------------------------")
-                print("")
-                print("Retune To The Main Menu...")
-                print("")
-                print("--------------------------")
-                MainOfApp()
-                break
-            elif userinstall == "7":
-                print("----------------------")
-                print("")
                 print("Installing VLC_Setup...")
                 print("")
                 print("----------------------")
@@ -268,10 +239,10 @@ def Apps_Downloader():
                 print("--------------------------")
                 MainOfApp()
                 break
-            elif userinstall == "8":
+            elif userinstall == "6":
                 print("----------------------")
                 print("")
-                print("Installing Bandicam(Trial)...")
+                print("Installing Bandicam...")
                 print("")
                 print("----------------------")
                 os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\T&P\BandicamSetup')
@@ -283,7 +254,7 @@ def Apps_Downloader():
                 print("--------------------------")
                 MainOfApp()
                 break
-            elif userinstall == "9":
+            elif userinstall == "7":
                 print("----------------------")
                 print("")
                 print("Installing Blender(2.8)...")
