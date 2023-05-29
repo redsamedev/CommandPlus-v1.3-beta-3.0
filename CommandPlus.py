@@ -2,6 +2,9 @@ import os
 import webbrowser as wb
 print("Welcome to CommandPlus Application")
 def MainOfApp():
+    print("")
+    print("")
+    print("Type help to see All Commands Available :)")
     while True:
         user = input("Type Command: ")
         if user == "help":
@@ -282,7 +285,7 @@ def Apps_Downloader():
 def Games_Downloader():
     while True:
         user = input("Type_Command: ")
-        helplist = ["1)GeometryDash(Crack)", "2)TLauncher", "3)Opticraft"]
+        helplist = ["1)GeometryDash(Crack)","2)Opticraft"]
         if user == "help":
             for i in helplist:
                 print(i)
@@ -298,16 +301,7 @@ def Games_Downloader():
         elif user == "2":
             print("-------------------------")
             print("")
-            print("Downloading Geometry Dash")
-            print("")
-            print("-------------------------")
-            os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\TL_Setup.exe')
-            MainOfApp()
-            break
-        elif user == "3":
-            print("-------------------------")
-            print("")
-            print("Downloading Geometry Dash")
+            print("Downloading Opticraft")
             print("")
             print("-------------------------")
             os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\OC_Setup')
@@ -315,8 +309,6 @@ def Games_Downloader():
             break
         else:
             print("Game Not Found")
-            MainOfApp()
-            break
 #Updated
 def webbrowsing():
     while True:
@@ -333,7 +325,7 @@ def webbrowsing():
             wb.open('https://youtube.com')
             print("")
             print("")
-            print("Wait fo Seconds...")
+            print("Wait for Seconds...")
             print()
             print()
             MainOfApp()
@@ -342,7 +334,7 @@ def webbrowsing():
             wb.open('https://facebook.com')
             print("")
             print("")
-            print("Wait fo Seconds...")
+            print("Wait for Seconds...")
             print()
             print()
             MainOfApp()
@@ -351,7 +343,7 @@ def webbrowsing():
             wb.open('https://twitter.com')
             print("")
             print("")
-            print("Wait fo Seconds...")
+            print("Wait for Seconds...")
             print()
             print()
             MainOfApp()
@@ -360,7 +352,7 @@ def webbrowsing():
             wb.open('https://google.com')
             print("")
             print("")
-            print("Wait fo Seconds...")
+            print("Wait for Seconds...")
             print()
             print()
             MainOfApp()
@@ -369,7 +361,7 @@ def webbrowsing():
             wb.open('https://instagram.com')
             print("")
             print("")
-            print("Wait fo Seconds...")
+            print("Wait for Seconds...")
             print()
             print()
             MainOfApp()
