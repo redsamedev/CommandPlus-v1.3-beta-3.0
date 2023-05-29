@@ -317,6 +317,7 @@ def Games_Downloader():
             print("Game Not Found")
             MainOfApp()
             break
+#Updated
 def webbrowsing():
     while True:
         user = input("Type_Command: ")
