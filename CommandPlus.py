@@ -5,7 +5,7 @@ def MainOfApp():
     while True:
         user = input("Type Command: ")
         if user == "help":
-            helplist = ["1)Calculator", "2)Games Downloader", "3)Apps Downloader", "4)Settings"]
+            helplist = ["1)Calculator", "2)Games Downloader", "3)Apps Downloader", "4)Web Shortcuts"]
             for hlist in helplist:
                 print(hlist)
         elif user == "1":
@@ -38,9 +38,14 @@ def MainOfApp():
             Apps_Downloader()
             break
         elif user == "2":
-            print("Opening GamesDownloader")
+            print("Opening GamesDownloader...")
             print("")
             Games_Downloader()
+            break
+        elif user == "4":
+            print("opening Web Shortcuts...")
+            print("")
+            webbrowsing()
             break
         else:
             print("Invalid Command")
@@ -312,5 +317,62 @@ def Games_Downloader():
             print("Game Not Found")
             MainOfApp()
             break
+def webbrowsing():
+    while True:
+        user = input("Type_Command: ")
+        helplist = ["yt: Youtube", "fb:Facebook", "twi: Twitter", "gg: Google", "ig: Instagram"]
+        if user == "help":
+            print("")
+            print("")
+            for i in helplist:
+                print(i)
+            print("")
+            print("")
+        elif user == "yt":
+            wb.open('https://youtube.com')
+            print("")
+            print("")
+            print("Wait fo Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+        elif user == "fb":
+            wb.open('https://facebook.com')
+            print("")
+            print("")
+            print("Wait fo Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+        elif user == "twi":
+            wb.open('https://twitter.com')
+            print("")
+            print("")
+            print("Wait fo Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+        elif user == "gg":
+            wb.open('https://google.com')
+            print("")
+            print("")
+            print("Wait fo Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+        elif user == "ig":
+            wb.open('https://instagram.com')
+            print("")
+            print("")
+            print("Wait fo Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+
 
 MainOfApp()
