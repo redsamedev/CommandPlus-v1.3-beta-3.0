@@ -286,7 +286,7 @@ def Games_Downloader():
         if user == "help":
             for i in helplist:
                 print(i)
-        elif user == 1:
+        elif user == "1":
             print("-------------------------")
             print("")
             print("Downloading Geometry Dash")
@@ -295,7 +295,7 @@ def Games_Downloader():
             os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\GeometryDash.exe')
             MainOfApp()
             break
-        elif user == 2:
+        elif user == "2":
             print("-------------------------")
             print("")
             print("Downloading Geometry Dash")
@@ -304,7 +304,7 @@ def Games_Downloader():
             os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\TL_Setup.exe')
             MainOfApp()
             break
-        elif user == 3:
+        elif user == "3":
             print("-------------------------")
             print("")
             print("Downloading Geometry Dash")
