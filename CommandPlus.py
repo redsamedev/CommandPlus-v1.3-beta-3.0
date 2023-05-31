@@ -1,10 +1,15 @@
 import os
 import webbrowser as wb
+import json
+from linkssaver import *
 print("Welcome to CommandPlus Application")
 def MainOfApp():
     print("")
     print("")
     print("Type help to see All Commands Available :)")
+    print()
+    print()
+    print()
     while True:
         user = input("Type Command: ")
         if user == "help":
@@ -26,7 +31,7 @@ def MainOfApp():
         elif user == "cpver":
             print("-----------------------------")
             print("")
-            print("CommandPlus 1.2")
+            print("CommandPlus 1.2.9")
             print("")
             print("-----------------------------")
             print("")
@@ -277,8 +282,13 @@ def Apps_Downloader():
                 print("--------------------------")
                 MainOfApp()
                 break
+            elif userinstall == "back":
+                break
             else:
                 print("Error(Programme Not Found)")
+        elif user == "back":
+            MainOfApp()
+            break
         else:
             print("Invalid Command")
 #Updated
@@ -307,14 +317,43 @@ def Games_Downloader():
             os.startfile('C:\Program Files (x86)\CommandPlus\Datas.CdP\AppsInstall\Browsers\OC_Setup')
             MainOfApp()
             break
+        elif user == "back":
+            MainOfApp()
+            break
         else:
             print("Game Not Found")
 #Updated
 def webbrowsing():
+    helplist = ["yt: Youtube", "fb:Facebook", "twi: Twitter", "gg: Google", "ig: Instagram"]
+    with open('userdatas.json') as f:
+        helplist = json.load(f)
     while True:
         user = input("Type_Command: ")
-        helplist = ["yt: Youtube", "fb:Facebook", "twi: Twitter", "gg: Google", "ig: Instagram"]
-        if user == "help":
+        if user == "crt-fav":
+            Link = input("Type Link: ")
+            Name = input("Type Name: ")
+            Shortcut = input("Type Shortcut: ")
+            helplist.append(Shortcut + ": " + Name)
+            with open('userdatas.json', "w") as f:
+                json.dump(helplist, f, indent=4)
+            with open('linkssaver.py', "w") as file:
+                file.write("Link0 = 'https://'" + Link + "\n")
+                file.write("sc0 = " + Shortcut + "\n")
+        elif user == "r":
+            print("")
+            print("")
+            for i in helplist:
+                print(i)
+            print("")
+            print("")
+            youremover = int(input("Which do you want to delete: "))
+            del helplist[youremover]
+            with open('userdatas.json', "w") as f:
+                json.dump(helplist, f, indent=4)
+            with open('linkssaver.py', "w") as file:
+                file.write("Link0 = ''" + "\n")
+                file.write("sc0 = ''" + "\n")
+        elif user == "help":
             print("")
             print("")
             for i in helplist:
@@ -366,6 +405,19 @@ def webbrowsing():
             print()
             MainOfApp()
             break
-
+        elif user == sc0:
+            wb.open(Link0)
+            print("")
+            print("")
+            print("Wait for Seconds...")
+            print()
+            print()
+            MainOfApp()
+            break
+        elif user == "back":
+            MainOfApp()
+            break
+        else:
+            print("Error Command Not Found")
 
 MainOfApp()
