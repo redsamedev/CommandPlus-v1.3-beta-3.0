@@ -1,6 +1,7 @@
 import os
 import webbrowser as wb
 import json
+import math
 from linkssaver import *
 print("Welcome to CommandPlus Application")
 def MainOfApp():
@@ -31,7 +32,7 @@ def MainOfApp():
         elif user == "cpver":
             print("-----------------------------")
             print("")
-            print("CommandPlus 1.2.9")
+            print("CommandPlus 1.3")
             print("")
             print("-----------------------------")
             print("")
@@ -61,7 +62,7 @@ def Calculator():
     while True:
         user = input("Type Command: ")
         if user == "help":
-            helplist = ["1)Back", "2)Start The Calculator"]
+            helplist = ["1)Back", "2)Basic Calculator", "3)Convertor"]
             for i in helplist:
                 print(i)
         elif user == "2":
@@ -94,13 +95,40 @@ def Calculator():
             
             MainOfApp()
             break
+        elif user == "3":
+            unitslists = ["1)km -> m", "2)m -> km", "3)s -> min", "4)min -> s"]
+            while True:
+                you = input("Type_Help: ")
+                if you == "help":
+                    for i in unitslists:
+                        print(i)
+                elif you == "1":
+                    km0 = float(input("km: "))
+                    m0 = km0 * 1000
+                    print("")
+                    print("Kilometers to meters =" ,m0)
+                elif you == "2":
+                    m = float(input("m: "))
+                    km = m / 1000
+                    print("")
+                    print("Kilometers to meters =", km)
+                elif you == "3":
+                    s = float(input("seconds: "))
+                    min = s / 60
+                    print("")
+                    print("seconds to minutes =", min)
+                elif you == "4":
+                       min0 = float(input("minutes: "))
+                       s0 = min0 * 60
+                       print()
+                       print("minutes to seconds =", s0)
         else:
             print("Invalid Command")
 def Apps_Downloader():
     while True:
         user = input("Type Command: ")
         if user == "help":
-            listh = ["1)Browsers","Programmes"]
+            listh = ["1)Browsers","2)Programmes"]
             for i in listh:
                 print(i)
         elif user == "1":
@@ -329,16 +357,21 @@ def webbrowsing():
         helplist = json.load(f)
     while True:
         user = input("Type_Command: ")
-        if user == "crt-fav":
+        using = True
+        if user == "crt-fav" and using:
             Link = input("Type Link: ")
             Name = input("Type Name: ")
             Shortcut = input("Type Shortcut: ")
             helplist.append(Shortcut + ": " + Name)
+            using = False
             with open('userdatas.json', "w") as f:
                 json.dump(helplist, f, indent=4)
             with open('linkssaver.py', "w") as file:
-                file.write("Link0 = 'https://'" + Link + "\n")
-                file.write("sc0 = " + Shortcut + "\n")
+                file.write("Link0 = 'https://" + Link + "'" + "\n")
+                file.write("sc0 = '" + Shortcut + "'" + "\n")
+                file.write("using0 = " + str(using) + "\n")
+        elif using0 == False and using == False:
+            print("Error")
         elif user == "r":
             print("")
             print("")
@@ -348,11 +381,13 @@ def webbrowsing():
             print("")
             youremover = int(input("Which do you want to delete: "))
             del helplist[youremover]
+            using = True
             with open('userdatas.json', "w") as f:
                 json.dump(helplist, f, indent=4)
             with open('linkssaver.py', "w") as file:
                 file.write("Link0 = ''" + "\n")
                 file.write("sc0 = ''" + "\n")
+                file.write("using0 = " + using + "\n")
         elif user == "help":
             print("")
             print("")
