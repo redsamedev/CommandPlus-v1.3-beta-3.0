@@ -3,5 +3,10 @@
     "fb: Facebook",
     "twi: Twitter",
     "ig: Instagram",
-    "gg: Google"
+    "gg: Google",
+    "crt-fav: create favorite",
+    "r: remove favorite",
+    "ih: Itch",
+    "wiki: Wikipedia",
+    "as: Aternos"
 ]

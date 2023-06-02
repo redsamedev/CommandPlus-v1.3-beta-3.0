@@ -1,7 +1,6 @@
 import os
 import webbrowser as wb
 import json
-import math
 from linkssaver import *
 print("Welcome to CommandPlus Application")
 def MainOfApp():
@@ -352,43 +351,13 @@ def Games_Downloader():
             print("Game Not Found")
 #Updated
 def webbrowsing():
-    helplist = ["yt: Youtube", "fb:Facebook", "twi: Twitter", "gg: Google", "ig: Instagram"]
+    helplist = ["yt: Youtube", "fb:Facebook", "twi: Twitter", "gg: Google", "ig: Instagram", "crt-fav: create favorites", "r: remove favorite"]
     with open('userdatas.json') as f:
         helplist = json.load(f)
     while True:
+        using = 5
         user = input("Type_Command: ")
-        using = True
-        if user == "crt-fav" and using:
-            Link = input("Type Link: ")
-            Name = input("Type Name: ")
-            Shortcut = input("Type Shortcut: ")
-            helplist.append(Shortcut + ": " + Name)
-            using = False
-            with open('userdatas.json', "w") as f:
-                json.dump(helplist, f, indent=4)
-            with open('linkssaver.py', "w") as file:
-                file.write("Link0 = 'https://" + Link + "'" + "\n")
-                file.write("sc0 = '" + Shortcut + "'" + "\n")
-                file.write("using0 = " + str(using) + "\n")
-        elif using0 == False and using == False:
-            print("Error")
-        elif user == "r":
-            print("")
-            print("")
-            for i in helplist:
-                print(i)
-            print("")
-            print("")
-            youremover = int(input("Which do you want to delete: "))
-            del helplist[youremover]
-            using = True
-            with open('userdatas.json', "w") as f:
-                json.dump(helplist, f, indent=4)
-            with open('linkssaver.py', "w") as file:
-                file.write("Link0 = ''" + "\n")
-                file.write("sc0 = ''" + "\n")
-                file.write("using0 = " + using + "\n")
-        elif user == "help":
+        if user == "help":
             print("")
             print("")
             for i in helplist:
@@ -440,18 +409,57 @@ def webbrowsing():
             print()
             MainOfApp()
             break
-        elif user == sc0:
-            wb.open(Link0)
-            print("")
-            print("")
-            print("Wait for Seconds...")
-            print()
-            print()
-            MainOfApp()
-            break
         elif user == "back":
             MainOfApp()
             break
+        elif user == "crt-fav":
+            hmws = int(input("How much web sites(MAXIMUM 5): "))
+            using -= hmws
+            linkint = 0
+            scint = 0
+            vint = 0
+            nint = 0
+            with open('linkssaver.py', "w") as f, open('userdatas.json', "w") as fjson:
+                for i in range(hmws):
+                    linkint += 1
+                    Link = input("Link" + str(linkint) + ": ")
+                    scint += 1
+                    Shortcut = input("Shortcut" + str(scint) + ": ")
+                    nint += 1
+                    Name = input("Name" + str(nint) + ": ")
+                    vint += 1
+                    f.write("Link" + str(vint) + " = " + "'https://" + Link + "'" + "\n")
+                    f.write("sc" + str(vint) + " = " + "'" + Shortcut + "'" + "\n")
+                    helplist.append(Shortcut + ": " + Name)
+                f.write("using0 = " + str(using) + "\n")
+                json.dump(helplist, fjson, indent=4)
+            if hmws > 5:
+                print("ERROR!!")
+        elif user == "r":
+            for i in helplist:
+                print(i)
+            print("")
+            print()
+            print()
+            remover = int(input("What do You want to remove: "))
+            del helplist[remover]
+            with open('userdatas.json', "w") as f:
+                json.dump(helplist, f, indent=4)
+            with open('linkssaver.py', "w") as f:
+                    f.write("#NONE")
+        elif user == "crt-fav" and using0 == 0:
+            print("Error")
+        elif user == sc1:
+            wb.open(Link1)
+            break
+        elif user == sc2:
+            wb.open(Link2)
+        elif user == sc3:
+            wb.open(Link3)
+        elif user == sc4:
+            wb.open(Link4)
+        elif user == sc5:
+            wb.open(Link5)
         else:
             print("Error Command Not Found")
 
